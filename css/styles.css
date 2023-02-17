@@ -65,6 +65,7 @@ body {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   text-decoration: none;
+  display: block;
 }
 
 .logo-header {
@@ -118,6 +119,7 @@ body {
 }
 
 .contacts-link {
+  display: block;
   padding-top: 24px;
   padding-bottom: 24px;
 
@@ -271,6 +273,8 @@ body {
 .footer-section .logo {
   display: block;
   margin-bottom: 16px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .logo-footer {
@@ -310,14 +314,12 @@ body {
   background: var(--secondary-brand-color);
 }
 
-.portfolio-menu > .list {
-  justify-content: center;
-}
-
 .portfolio-section {
   padding-top: 96px;
 }
+
 .portfolio-menu {
+  justify-content: center;
   margin-bottom: 72px;
 }
 

@@ -10,24 +10,31 @@
 
 body {
   color: var(--primary-text-color);
+  background-color: var(--white-color);
+
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  background-color: var(--white-color);
 }
 
 .container {
   width: 1158px;
   margin: 0 auto;
-  padding: 0 12px;
+  padding: 0 15px;
 }
 
 .list-link {
-  list-style: none;
-  text-decoration: none;
   margin: 0;
   padding: 0;
+
+  list-style: none;
+  text-decoration: none;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
 }
 
 .visually-hidden {
@@ -45,77 +52,112 @@ body {
 
 /* Header */
 
-.header {
-  border-bottom: 1px solid #e7e9fc;
-}
-
 .logo {
-  font-family: "Raleway";
+  color: var(--primary-brand-color);
+
+  font-family: "Raleway", sans-serif;
   font-weight: 800;
   font-size: 18px;
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   text-decoration: none;
-  color: var(--primary-brand-color);
 }
 
 .logo-header {
   color: var(--title--text-color);
 }
 
+.header {
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.header-section,
+.site-nav-section {
+  display: flex;
+  align-items: center;
+}
+
+.site-nav {
+  display: flex;
+  margin-left: 76px;
+}
+
+.site-nav-item:not(:last-child) {
+  margin-right: 40px;
+}
+
 .site-nav .site-nav-link {
-  font-weight: 500;
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
   color: var(--title--text-color);
+
+  font-weight: 500;
   text-decoration: none;
 }
 
 .site-nav-link:hover,
 .site-nav-link:focus,
-.contacts-item:hover,
-.contacts-item:focus,
+.contacts-link:hover,
+.contacts-link:focus,
 .site-nav-link.current {
   color: var(--primary-brand-color);
 }
 
-.contacts-item {
+.contacts-section {
+  margin-left: auto;
+}
+
+.contacts-list {
+  display: flex;
+}
+
+.contacts-link {
+  color: var(--title--text-color);
+
   font-style: normal;
   text-decoration: none;
-  color: var(--title--text-color);
+}
+
+.contacts-item + .contacts-item {
+  margin-left: 40px;
 }
 
 /* Hero */
 
 .hero {
   background-color: var(--title--text-color);
+
   text-align: center;
-  margin-bottom: 120px;
 }
 
 .hero-title {
-  font-size: 56px;
-  line-height: 1.07;
-  color: var(--white-color);
-  /* width: 494px; */
   margin-top: 0;
   margin-bottom: 48px;
-  padding-top: 188px;
+
+  color: var(--white-color);
+
+  font-size: 56px;
+  line-height: 1.07;
 }
 
 .order-button {
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  padding: 16px 32px;
+
+  color: var(--white-color);
+  background-color: var(--primary-brand-color);
+
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   cursor: pointer;
-  color: var(--white-color);
-  background-color: var(--primary-brand-color);
-  border-radius: 4px;
-  border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  padding: 16px 32px;
-  margin-bottom: 188px;
 }
 
 .order-button:hover,
@@ -124,68 +166,88 @@ body {
 }
 
 /* Main Content */
+
 .features-section,
 .our-work-section,
 .portfolio-section {
   padding-bottom: 120px;
 }
 
+.features-section {
+  padding-top: 120px;
+}
+
+.list {
+  display: flex;
+}
+
+.item + .item {
+  margin-left: 24px;
+}
+
 .our-team-section {
-  background-color: var(--background-color);
   padding: 120px 0 120px 0;
+
+  background-color: var(--background-color);
 }
 
 .section-title {
+  margin-top: 0;
+  margin-bottom: 72px;
+
+  color: var(--title--text-color);
+
   font-size: 36px;
   line-height: 1.11;
   text-align: center;
   text-transform: capitalize;
-  color: var(--title--text-color);
-  margin-top: 0;
-  margin-bottom: 72px;
 }
 
 .features-title,
-.example-title,
+.portfolio-title,
 .team-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+
+  color: var(--title--text-color);
+
   font-weight: 500;
   font-size: 20px;
   line-height: 1.2;
-  color: var(--title--text-color);
-  margin-top: 0;
-  margin-bottom: 8px;
 }
 
-.team-title {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 8px;
-  padding-top: 32px;
-}
-
-.features-descr {
+.features-descr,
+.team-descr {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-.team-descr {
-  text-align: center;
-  margin: 0 0;
-  padding: 0 0 32px 0;
+.team-content {
+  padding: 32px 16px;
 }
 
-.our-team-list {
+.team-title,
+.team-descr {
+  text-align: center;
+}
+
+.our-team-section .item {
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
+
   background-color: var(--white-color);
 }
 
 /* Footer */
 .footer-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
   background-color: var(--title--text-color);
   color: var(--accent-color);
-  padding: 100px 0;
 }
 
-.container > a {
+.footer-section .logo {
   display: block;
   margin-bottom: 16px;
 }
@@ -203,39 +265,60 @@ body {
 /* Portfolio Main  */
 
 .portfolio-filter-button {
+  padding: 12px 24px;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+
+  color: var(--primary-brand-color);
+  background: var(--background-color);
+
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.04em;
-  color: var(--primary-brand-color);
-  background: var(--background-color);
   cursor: pointer;
-  border: 1px solid var(--accent-color);
-  border-radius: 4px;
-  padding: 12px 24px;
 }
 
 .portfolio-filter-button:hover,
 .portfolio-filter-button:focus {
-  color: var(--white-color);
-  background: var(--secondary-brand-color);
   border: 1px solid transparent;
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
+
+  color: var(--white-color);
+  background: var(--secondary-brand-color);
+}
+
+.portfolio-menu > .list {
+  justify-content: center;
 }
 
 .portfolio-menu {
-  width: 586px;
-  margin: 96px 0 72px 0;
+  padding-top: 96px;
+  padding-bottom: 72px;
 }
 
-.portfolio-title {
-  margin: 0 0 8px 0;
-  padding-top: 32px;
+.list-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -24px;
+  margin-bottom: -48px;
 }
 
-.portfolio-descr {
+.portfolio-item {
+  flex-basis: calc((100% / 3)-24px);
+  margin-left: 24px;
+  margin-bottom: 48px;
+  border-bottom: 1px solid #e7e9fc;
+}
+
+.portfolio-content {
+  padding: 32px 16px;
+}
+
+.portfolio-text {
+  margin-top: 0;
+  margin-bottom: 0;
+
   color: var(--primary-text-color);
-  margin: 0 0;
-  padding: 0 0 32px 0;
 }
